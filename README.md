@@ -1,6 +1,6 @@
 # Appstream Pro Config
 
-This repository contains a collection of batch files that can be used to configure user-specific in arcgis pro. The process is designed to be triggered by the `trigger-pro-config.bat` process, running as an Appstream Session Script. 
+This repository contains a collection of batch files that can be used to configure user-specific settings for ArcGIS Pro, on startup. The process is designed to be triggered by the `trigger-pro-config.bat` process, running as an Appstream Session Script. 
 ### Execution steps:
 - User connects to app stream, a GIS workspace image is instantiated
 - Appstream session script configuration launches the `trigger-pro-config.bat` file
