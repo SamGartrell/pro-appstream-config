@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ArcGIS Pro Desktop Application Settings Language (DASL)
+
+  Copyright (c) ESRI Corporation. All rights reserved.
+-->
+<xs:schema id="ProSettings"
+    targetNamespace="http://schemas.esri.com/ProSettings"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.esri.com/ProSettings"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ArcGISProSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Application" maxOccurs="1" minOccurs="0">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="UseLocalHelp" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="UseDarkTheme" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="UseSpellCheck" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Projects" maxOccurs="1" minOccurs="0">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="CreateBackup" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="BackupIntervalMinutes" type="LockableIntType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="LocalProject" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="CustomDefaultLocation" type="LockableStringType" maxOccurs="1" minOccurs="0"/>
+                    <xs:element name="CreateProjectInNewFolder" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="HomeFolder" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="DefaultGeodatabase" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="DefaultToolbox" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>              
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Versioning" maxOccurs="1" minOccurs="0">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="ConnectionDefaultVersioningType" type="LockableStringType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="ShowReconcileDialog" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="ShowConflictDialog" type="LockableBoolType"  minOccurs="0" maxOccurs="1"/>
+              <xs:element name="ReconcileDefineConflicts" type="LockableStringType"  minOccurs="0" maxOccurs="1"/>
+              <xs:element name="ReconcileResolveConflicts" type="LockableStringType"  minOccurs="0" maxOccurs="1"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Catalog" maxOccurs="1" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EnableIndexing" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="IndexNetworkConnections" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="SkipServerConnections" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="SearchIndexes" type="LockableStringType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="MetadataStyle" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="MetadataCanDeleteGPHistory" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Table" maxOccurs="1" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DisableAddRow" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="SupportedUriSchemeList" type="LockableStringType" maxOccurs="1" minOccurs="0" />
+              <xs:element name="AllowWebLinks" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="AllowFileLinks" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="SupportedFileExtensionList" type="LockableStringType" maxOccurs="1" minOccurs="0" />
+              <xs:element name="FontName" type="LockableStringType" maxOccurs="1" minOccurs="0" />
+              <xs:element name="FontSize" type="LockableDoubleType" maxOccurs="1" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Navigation" maxOccurs="1" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShowFlashCrosshairs" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Selection" maxOccurs="1" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KeepInvisibleFeaturesSelected" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Geoprocessing" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="RecordGPHistoryInMetadata" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="EnableUndo" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="RemoveOverwrittenLayers" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="AddOutputsToMap" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="AddHistoryItem" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="MessageLevelProjectionTransformation" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="MessageLevelCommandSyntax" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="MessageLevelDiagnostics" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+ 	            <xs:element name="ToolParameters" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Display" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="LocalCacheFolderPath" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="AntialiasingMode" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="TextAntialiasingMode" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="StereoscopicMode" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="RenderingMode" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="RenderingQuality" type="LockableIntType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="EnableVSync" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="EnableRenderingAntialiasing" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="ClearCacheWhenAppClosing" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="UseSquarePrimitive" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ColorManagement" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WorkingColorSpaceForNewItems" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="RGBColorProfile" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="CMYKColorProfile" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="ColorConversionRule" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="RenderingIntent" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="EnableColorManagement" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="EnableDefaultBlackPointCompensation" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Layout" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TemplatePath" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MapAndScene" maxOccurs="1" minOccurs="0">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="DefaultBasemapJson" type="LockableStringType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="LayerVisibleByDefault" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="DefaultSpatialReference" type="LockableStringType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="ConfirmTransformation" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="DefaultLabelEngine" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="AddDefaultElevationSource" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="CustomElevationSourceXml" type="LockableStringType" maxOccurs="1" minOccurs="0"/>
+              <xs:element name="ManageFeatureCaching" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="ContentsPanePointLegendPatchSizeLimit" type="LockableIntType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="AreUnRegisteredDatasetsAndCsvBackwardCompatible" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+		<xs:element name="CheckMapsWhenDeleting" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+		<xs:element name="CheckMapsWhenRenaming" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TextAndGraphics" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DefaultFontName" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="DefaultFontStyle" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="DefaultFontVariationSettings" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Editing" maxOccurs="1" minOccurs="0">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="RequireExplicitStartEditing" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="ShowSaveDialog" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="ShowDiscardDialog" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="EnforceAttributeValidation" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="WarnOnDelete" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="NewLayersEditable" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="AutoSaveEdits" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="SaveWithProject" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="WarnOnSubtypeChange" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="InitializeDefaultValueSubtype" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="WarnOnDiscardAttribute" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="StretchVertices" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="StretchTopology" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="WarnOnDiscardGeometry" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="MoveToolActivationAfterPaste" type="LockableBoolType" minOccurs="0" maxOccurs="1"/>
+			  <xs:element name="AutoApplyAttributes" type="LockableBoolType" maxOccurs="1" minOccurs="0"/>
+			</xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GeodatabaseReplication" maxOccurs="1" minOccurs="0">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="LogFilePath" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+              <xs:element name="LogLevel" type="LockableStringType" minOccurs="0" maxOccurs="1"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="LockableBoolType">
+    <xs:simpleContent>
+      <xs:extension base="xs:boolean">
+        <xs:attribute name="isLocked" type="xs:boolean" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="LockableStringType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="isLocked" type="xs:boolean"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="LockableIntType">
+    <xs:simpleContent>
+      <xs:extension base="xs:int">
+        <xs:attribute name="isLocked" type="xs:boolean"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="LockableDoubleType">
+    <xs:simpleContent>
+      <xs:extension base="xs:double">
+        <xs:attribute name="isLocked" type="xs:boolean"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
